@@ -1,3 +1,11 @@
+There are n cities and m edges connected by some number of flights. You are given an array flights where 
+flights[i] = [fromi, toi, pricei] indicates that there is a flight from the city fromi to city toi with cost pricei.
+You are also given three integers src, dst, and k, return the cheapest price from src to dst with at most k stops. 
+If there is no such route, return -1.
+
+Note: The price from city A to B may be different From the price from city B to A
+
+
 //{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
