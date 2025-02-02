@@ -63,16 +63,20 @@ class Solution {
   public:
     int numProvinces(vector<vector<int>> adj, int V) {
         // code here
+        DisjointSet ds(V);
         vector<int> adjls[V];
         for(int i=0; i<V; i++){
             for(int j=0; j<V; j++){
-                if(adj[i][j]==1 && i!=j){
-                    adjls[i].push_back(j);
-                    adjls[j].push_back(i);
+                if(adj[i][j]==1){
+                   ds.unionBySize(i,j);
                 }
             }
         }
-        
+        int cnt=0;
+        for(int i=0; i<V; i++){
+            if(ds.parent[i]==i) cnt++;
+        }
+        return cnt;
     }
 };
 
